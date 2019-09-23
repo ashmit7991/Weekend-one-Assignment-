@@ -1,0 +1,76 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.header {
+    margin-bottom: 30px;
+}
+
+.imge {
+    float: left;
+}
+ul {
+    display: inline;
+    text-decoration: none;
+}
+
+ul li {
+    display: inline-flex;
+    padding-right: 30px;
+}
+
+ul li a {
+    text-decoration: none;
+}
+h1 {
+    font-size: 50px;
+    margin-bottom: -10px;
+}
+.LogoText {
+    margin-top: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 210px;
+}
+hr {
+    width: 100%;
+}
+.sidetag {
+    background-color: #f0df87;
+}
+.sidebar {
+    border-right: 1px soled black;
+}
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
+.grey {
+    background-color: rgb(212, 211, 211);
+}
+.blue {
+    background-color: rgb(188, 226, 226);
+}
+.footer {
+    margin-top: 20px;
+    border-top: 2px solid rgb(169, 142, 196);
+}
+ol li {
+    list-style-type: none;
+}
+.footmenu {
+    margin-top: 20px;
+    margin-left: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.footmenu1 {
+    margin-top: 20px;
+    margin-left: 30px;
+    font-family: monospace;
+}
+.ptag {
+    font-size: 55px;
+    color: grey;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: -15px;
+    margin-bottom: -10px;
