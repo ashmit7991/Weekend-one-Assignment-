@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+    <style>
+      #myform{
+        text-align: center;
+        width: 35%;
+        margin-left: 32%;
+       
+      }
+    </style>
+
+
+  </head>
+<body>
+ <center><h1>Registration form</h1></center>
+     <hr>
+     <form id="myform" onsubmit="onSubmit()">
+      <div class="form-group">
+          <label for="userid">User id:</label>
+            <input type="text" class="form-control" id="userid" placeholder="Enter User id" required><br>
+              <small id="user" class="text-danger" class="form-text text-muted">
+                  </small>
+       </div>
+    </div>
+
+
+    <div class="form-group">
+            <label for="password">Password: </label>
+             <input type="password"  class="form-control" id="password" placeholder="Enter Password" required><br>
+             <small
+              id="pswrd" class="text-danger" class="form-text text-muted"></small>
+             </div>
+              </div>
+
+                <div class="form-group">
+                <label for="confirmpassword">Confirm Password: </label>
+                <input type="password"  class="form-control" id="confirmpassword" placeholder="Confirm Password" required><br>
+                 <small
+                    id="cpswrd" class="text-danger" class="form-text text-muted"></small>
+                </div>
+                </div>
+      <div class="form-group">
+            
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" placeholder=" Enter Name" required><br>
+        <small
+          id="fname" class="text-danger" class="form-text text-muted"></small>
+      </div>
+       
+    </div>
+      </div>
+    </div>
+    <div class="form-group">
+
+        <label for="address">Address:</label>
+        <input type="text"  class="form-control" id="address" placeholder="Optional" name="address">
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="country">Country:</label>     
+        
+        <select id="country" name="country" class="form-control" required>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Åland Islands">Åland Islands</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="American Samoa">American</option>
+            <option value="Andorra">Andorra</option>
+            <option value="Angola">Angola</option>
+            <option value="Anguilla">Anguilla</option>
+            <option value="Antarctica">Antarctica</option>
+            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+            <option value="Argentina">Argentina</option>
+            </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label for="zipcode">ZIP Code:</label>
+        <input type="number"  class="form-control" id="zipcode" placeholder="Enter Zipcode" required>
+        <small
+          id="zip" class="text-danger" class="form-text text-muted"
+        ></small>
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="email">Email: </label>
+        <input type="email" requird class="form-control" id="email" placeholder="Enter Email"><br>
+        
+        <small id="emailid" class="text-danger" class="form-text text-muted">
+            </small>
+      
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="Sex">Birthday:</label>
+        <input type="date" name="bday">
+    </div>
+</div>
+
+
+
+    <div class="form-group">
+
+
+
+
+
+
+
+
+
+        <label for="Sex">Sex:</label>
+        <input type="radio" name="gender" value="male "> Male
+        <input type="radio" name="gender" value="female"> Female
+
+
+
+
+
+        
+        
+      </div>
+    </div>
+            <div class="form-group">
+                <label for="language">Language:</label>
+                <input type="checkbox" name="language" value="English" checked>English
+                 <input type="checkbox" name="language" value="Non English">Non English
+    
+      </div>
+            </div>
+            <div class="form-group">
+                <label for="language">About:</label>
+            </div>
+
+                 <textarea rows="5" cols="60">
+                    
+                    </textarea>
+               
+            </div>
+        </div>
+    </div>           
+      <button type="submit" class="btn btn-success">Submit</button>
+     
+</div>
+    </form>
+    <script>
+
+          //Userid Validation
+          $("#userid").keyup(updateUserid);
+      
+      function updateUserid() {
+        var x = $("#userid").val();
+        if (x.length <=5 || x.length>=12) {
+          $("#user").text(
+            "UserId must be of length 5 to 12 characters"
+          );
+        
+        } else {
+          $("#user").text("");
+        
+        }
+      }
+
+            //Email Validation
+            $("#email").keyup(validateEmail);
+      
+            function validateEmail() {
+              var Email = $("#email").val();
+              var pattern = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+      
+              var bol = $.trim(Email).match(pattern) ? true : false;
+              if (bol === false) {
+                $("#emailid").text("Enter a Valid Email Address");
+              } else {
+                $("#emailid").text("");
+              }
+            }
+      
+            //Password Validation
+            $("#password").keyup(updatePassword);
+      
+            function updatePassword() {
+              var x = $("#password").val();
+              if (x.length <=7 || x.length >=12) {
+                $("#pswrd").text(
+                  "Password should be of length 7 to 12 character"
+                );
+              } else {
+                $("#pswrd").text("");
+              }
+            }
+            //Confirm Password Validation
+      $("#confirmPassword").keyup(confirmPassword);
+
+       function confirmPassword() {
+     var password = $("#password").val();
+        var confirmPassword = $("#confirmpassword").val();
+  if (password !== confirmPassword) {
+    $("#cpswrd").text("Password does not match");
+  } else {
+    $("#cpswrd").text("");
+  }
+}
+
+
+            //Name Validation
+        
+            $("#name").keyup(validateName);
+      
+            function validateName() {
+              var Name = $("#name").val();
+              var pattern = /^[a-zA-Z]+$/;
+      
+              var bol = $.trim(Name).match(pattern) ? true : false;
+              if (bol === false) {
+                $("#fname").text("Only Alphabet allowed");
+                
+              } else {
+                $("#fname").text("");
+              
+              }
+            }
+      
+           function onSubmit(){
+             alert("Form Submitted Successfully")           }
+     
+          </script>
+  
+  </body>
+  </html>
+  
+</body>
